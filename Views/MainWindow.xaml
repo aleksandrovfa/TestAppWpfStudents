@@ -15,22 +15,22 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid >
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" 
-                Content="Выбрать предмет:"
-                      VerticalAlignment="Center" />
-            <ComboBox Grid.Column="1" 
-                ItemsSource="{Binding Subjects}"
+            <Label Grid.Column="0"
+                   Content="Выбрать предмет:"
+                   VerticalAlignment="Center" />
+            <ComboBox Grid.Column="1"
+                      ItemsSource="{Binding Subjects}"
                       SelectedItem="{Binding SelectedSubject}"
                       DisplayMemberPath="Name"
-                      Margin="5"/>
-            <Button Grid.Column="2" 
-                Content="Добавить предмет"
+                      Margin="5" />
+            <Button Grid.Column="2"
+                    Content="Добавить предмет"
                     Command="{Binding AddSubjectCommand}"
                     Margin="5" />
         </Grid>
@@ -38,7 +38,8 @@
                   ItemsSource="{Binding Students}"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
-                  SelectedItem="{Binding SelectedStudent}">
+                  SelectedItem="{Binding SelectedStudent}"
+                  Margin="5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Имя студента"
                                     Binding="{Binding Name}"

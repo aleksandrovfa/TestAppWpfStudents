@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestAppWpfStudents.Models;
 using Microsoft.Data.Sqlite;
 using System.IO;
-using System.Xml.Linq;
 using TestAppWpfStudents.Interfaces;
-using System.Xml.Serialization;
 
 namespace TestAppWpfStudents.Services
 {
-    public class SqliteDataService: IDataService
+    public class SqliteDataService : IDataService
     {
         private readonly string dbPath;
 
@@ -24,7 +19,7 @@ namespace TestAppWpfStudents.Services
 
         public void Initialize()
         {
-           
+
             using (var connection = new SqliteConnection($"Data Source={dbPath}"))
             {
                 connection.Open();

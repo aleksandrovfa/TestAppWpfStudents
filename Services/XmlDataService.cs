@@ -8,8 +8,6 @@ using System.Xml.Serialization;
 
 namespace TestAppWpfStudents.Services
 {
-
-
     public class XmlDataService : IDataService
     {
         private readonly string xmlPath;

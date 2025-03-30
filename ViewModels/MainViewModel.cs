@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using TestAppWpfStudents.Helpers;
 using TestAppWpfStudents.Interfaces;
 using TestAppWpfStudents.Models;
-using TestAppWpfStudents.Services;
 using TestAppWpfStudents.Views;
 
 namespace TestAppWpfStudents.ViewModels
