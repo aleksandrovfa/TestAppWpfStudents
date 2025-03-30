@@ -1,0 +1,67 @@
+﻿<Window x:Class="TestAppWpfStudents.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TestAppWpfStudents.Helpers"
+        xmlns:viewmodels="clr-namespace:TestAppWpfStudents.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        Title="Успеваемость студентов"
+        Height="450"
+        MinHeight="300"
+        MinWidth="300"
+        Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" 
+                Content="Выбрать предмет:"
+                      VerticalAlignment="Center" />
+            <ComboBox Grid.Column="1" 
+                ItemsSource="{Binding Subjects}"
+                      SelectedItem="{Binding SelectedSubject}"
+                      DisplayMemberPath="Name"
+                      Margin="5"/>
+            <Button Grid.Column="2" 
+                Content="Добавить предмет"
+                    Command="{Binding AddSubjectCommand}"
+                    Margin="5" />
+        </Grid>
+        <DataGrid Grid.Row="1"
+                  ItemsSource="{Binding Students}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectedItem="{Binding SelectedStudent}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя студента"
+                                    Binding="{Binding Name}"
+                                    Width="*" />
+                <DataGridTextColumn Header="Оценки"
+                                    Binding="{Binding Grades}"
+                                    Width="2*" />
+                <DataGridTextColumn Header="Средняя оценка"
+                                    Binding="{Binding AverageGrade, StringFormat={}{0:F2}}"
+                                    Width="0.5*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Margin="5">
+            <Button Content="Добавить студента"
+                    Command="{Binding AddStudentCommand}"
+                    Margin="5" />
+            <Button Content="Добавить оценку"
+                    Command="{Binding AddGradeCommand}"
+                    Margin="5" />
+        </StackPanel>
+    </Grid>
+
+</Window>
